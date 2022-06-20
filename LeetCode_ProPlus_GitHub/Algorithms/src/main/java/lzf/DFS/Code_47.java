@@ -32,7 +32,7 @@ public class Code_47 {
         }
         for (int i = 0; i < nums.length; i++) {
             // used[i - 1] == true,说明同一树枝nums[i-1]使用过
-            // used[i - 1] == false，说明同⼀树层nums[i - 1]使⽤过
+            // used[i - 1] == false，nums[i] == nums[i-1]说明同⼀树层nums[i - 1]使⽤过
             // 如果同⼀树层nums[i - 1]使⽤过则直接跳过
             if (i >0 && nums[i] == nums[i-1] && !used[i - 1]) {
                 continue;

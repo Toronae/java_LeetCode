@@ -3,6 +3,9 @@ package lzf.Heap;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * 堆一般指优先队列
+ */
 public class Code_215 {
     public static void main(String[] args) {
         int[] nums = {3,2,1,5,6,4};

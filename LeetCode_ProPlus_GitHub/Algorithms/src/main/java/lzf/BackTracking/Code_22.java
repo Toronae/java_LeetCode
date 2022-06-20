@@ -1,5 +1,7 @@
 package lzf.BackTracking;
 
+import com.sun.org.apache.bcel.internal.classfile.Code;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -7,8 +9,34 @@ import java.util.List;
 
 public class Code_22 {
     public static void main(String[] args) {
-
+        int n = 3;
+        System.out.println(new Code_22().generateParenthesis(n));
     }
+    static List<String> res = new ArrayList<String>();  //记录答案
+
+    public List<String> generateParenthesis(int n) {
+        res.clear();
+        dfs(n, 0, 0, "");
+        return res;
+    }
+    public void dfs(int n ,int lc, int rc ,String str)
+    {
+        //递归边界
+        if( lc == n && rc == n) {
+            res.add(str);
+        }
+        else {
+            if(lc < n) {
+                //拼接左括号
+                dfs(n, lc + 1, rc, str + "(");
+            }
+            if(rc < n && lc > rc) {
+                //拼接右括号
+                dfs(n, lc, rc + 1, str + ")");
+            }
+        }
+    }
+
 
     //dfs
     /*public List<String> generateParenthesis(int n) {

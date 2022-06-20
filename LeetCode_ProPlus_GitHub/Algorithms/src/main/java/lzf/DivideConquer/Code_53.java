@@ -7,7 +7,7 @@ public class Code_53 {
     }
 
     // 分治法
-    public int getMax(int[] nums, int low, int high) {
+    /*public int getMax(int[] nums, int low, int high) {
         // 如果子数组只有一个元素，这个元素就是子树组的最大和。
         if (low == high) {
             return nums[low];
@@ -44,7 +44,7 @@ public class Code_53 {
 
     public int maxSubArray(int[] nums) {
         return getMax(nums, 0 , nums.length - 1);
-    }
+    }*/
     // 动态规划
     /*public int maxSubArray(int[] nums) {
         if (nums.length == 0){
@@ -61,7 +61,7 @@ public class Code_53 {
     }*/
 
 
-    /*public int maxSubArray(int[] nums) {
+    public int maxSubArray(int[] nums) {
         int res = nums[0];
         int sum = 0;
 
@@ -74,17 +74,17 @@ public class Code_53 {
             res = Math.max(res,sum);
         }
 
-        *//*for (int num:nums) {
-            if (sum > 0) {
-                sum += num;
-            }else {
-                sum = num;
-            }
-            res = Math.max(res,sum);
-        }*//*
+//        for (int num:nums) {
+//            if (sum > 0) {
+//                sum += num;
+//            }else {
+//                sum = num;
+//            }
+//            res = Math.max(res,sum);
+//        }
 
         return res;
-    }*/
+    }
 
     // 暴力破解
 

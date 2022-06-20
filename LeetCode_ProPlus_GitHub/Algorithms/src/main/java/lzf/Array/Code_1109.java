@@ -19,8 +19,9 @@ public class Code_1109 {
         for (int i = 1; i < n; i++) {
             nums[i] += nums[i-1];
         }
-    return nums;
+        return nums;
     }
+
 
     /*public int[] corpFlightBookings(int[][] bookings, int n) {
         // 类同1094题思想，使用差分思想。

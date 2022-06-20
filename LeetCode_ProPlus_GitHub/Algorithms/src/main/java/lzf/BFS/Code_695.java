@@ -5,7 +5,9 @@ import java.util.Queue;
 
 public class Code_695 {
     public static void main(String[] args) {
-
+        int[][] grid = {{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},
+                {0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,0,0,0,0,0,0,1,1,0,0,0,0}};
+        System.out.println(new Code_695().maxAreaOfIsland(grid));
     }
 
     public int maxAreaOfIsland(int[][] grid) {

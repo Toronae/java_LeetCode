@@ -6,6 +6,7 @@ import java.util.Queue;
 
 public class Code_130 {
     public static void main(String[] args) {
+        //从边界出发，先把边界上和 O 连通点找到, 把这些变成 B,然后遍历整个 board 把 O 变成 X, 把 B 变成 O
         char[][] board = {{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
         solve(board);
         System.out.println(Arrays.deepToString(board));
@@ -67,7 +68,7 @@ public class Code_130 {
         }
     }
     // dfs
-    /*public static void solve(char[][] board) {
+    public static void solve1(char[][] board) {
         if (board == null || board.length == 0){
             return;
         }
@@ -105,5 +106,40 @@ public class Code_130 {
         dfs(board, i , j-1);
         dfs(board, i , j+1);
 
-    }*/
+    }
+    public static void solve2(char[][] board) {
+        if (board == null || board.length == 0){
+            return;
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                boolean isEdge = i == 0 || j == 0 || i==board.length -1 || j == board[0].length-1;
+                if (isEdge && board[i][i] == '0'){
+                    dfss(board,i,j);
+                }
+            }
+        }
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] == '0'){
+                    board[i][j] = 'X';
+                }
+                if (board[i][j] == '#'){
+                    board[i][j] = 'X';
+                }
+            }
+        }
+
+    }
+
+    private static void dfss(char[][] board, int i, int j) {
+        if (i<0 || 0<j || i>= board.length || j>= board[0].length ||board[i][j] == 'X' ||board[i][j] =='#'){
+            return;
+        }
+        board[i][j] ='#';
+        dfss(board,i-1,j);
+        dfss(board,i+1,j);
+        dfss(board,i,j-1);
+        dfss(board,i,j+1);
+    }
 }

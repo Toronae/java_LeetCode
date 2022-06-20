@@ -6,7 +6,7 @@ public class Code_162 {
         System.out.println(new Code_162().findPeakElement(nums));
     }
 
-    public int findPeakElement(int[] nums) {
+    /*public int findPeakElement(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
         int n = nums.length;
@@ -34,5 +34,29 @@ public class Code_162 {
             }
         }
         return 0;
+    }*/
+
+    public int findPeakElement(int[] nums) {
+        int left = 0, right = nums.length - 1;
+        for (; left < right; ) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > nums[mid + 1]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
     }
+
+   /*public int findPeakElement(int[] nums) {
+       int idx = 0;
+       for (int i = 1; i < nums.length; ++i) {
+           if (nums[i] > nums[idx]) {
+               idx = i;
+           }
+       }
+       return idx;
+   }*/
+
 }
