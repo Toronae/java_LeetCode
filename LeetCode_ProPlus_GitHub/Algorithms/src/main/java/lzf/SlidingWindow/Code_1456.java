@@ -9,7 +9,35 @@ public class Code_1456 {
         int k = 3;
         System.out.println(new Code_1456().maxVowels(s,k));
     }
+    //滑窗
     public int maxVowels(String s, int k) {
+        int n = s.length();
+        int left = 0;
+        int right = 0;
+        int cnt = 0;
+        int res = 0;
+        while (right < n) {
+            cnt += isValid(s.charAt(right));
+            if (right - left + 1 > k) {
+                cnt -= isValid(s.charAt(left));
+                left++;
+            }
+            if (right - left + 1 == k) {
+                res = Math.max(res, cnt);
+            }
+            right++;
+        }
+        return res;
+    }
+
+    private int isValid(char c) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            return 1;
+        }
+        return 0;
+    }
+
+    public int maxVowels1(String s, int k) {
         char[] c = s.toCharArray();
         Set<Character> set = new HashSet<>();
         set.add('a');
