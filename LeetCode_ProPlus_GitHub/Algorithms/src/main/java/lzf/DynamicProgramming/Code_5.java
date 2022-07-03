@@ -1,5 +1,8 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 最长回文子串
+ */
 public class Code_5 {
     public static void main(String[] args) {
         String s = "babad";

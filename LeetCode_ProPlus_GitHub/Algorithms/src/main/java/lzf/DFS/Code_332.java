@@ -2,6 +2,9 @@ package lzf.DFS;
 
 import java.util.*;
 
+/**
+ * 邻接表
+ */
 public class Code_332 {
     public static void main(String[] args) {
 

@@ -34,7 +34,7 @@ public class Code_1631 {
         }
         Collections.sort(edges, (o1, o2) -> o1[0] - o2[0]);
 
-        UnionFind uf = new UnionFind(M * N);
+        UnionFind5 uf = new UnionFind5(M * N);
         for (int[] edge : edges) {
             uf.union(edge[1], edge[2]);
             if (uf.find(0) == uf.find(M * N - 1)) {
@@ -43,34 +43,34 @@ public class Code_1631 {
         }
         return 0;
     }
+}
+class UnionFind5 {
+    int count;      // 连通分量个数
+    int[] parent;   // 节点i的父节点是parent[i]
 
-    class UnionFind {
-        int count;      // 连通分量个数
-        int[] parent;   // 节点i的父节点是parent[i]
-
-        public UnionFind(int N) {
-            this.count = N;         // n为图的节点总数
-            parent = new int[N];
-            for (int i = 0; i < N; i++) {
-                parent[i] = i;      // 父节点指针初始指向自己
-            }
+    public UnionFind5(int N) {
+        this.count = N;         // n为图的节点总数
+        parent = new int[N];
+        for (int i = 0; i < N; i++) {
+            // 父节点指针初始指向自己
+            parent[i] = i;
         }
+    }
 
-        public void union(int x, int y) {
-            int rootX = find(x);
-            int rootY = find(y);
-            if (rootX == rootY) {
-                return;
-            }
-            parent[rootX] = rootY;          // x成为y的子树
-            count--;
+    public void union(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        if (rootX == rootY) {
+            return;
         }
+        parent[rootX] = rootY;          // x成为y的子树
+        count--;
+    }
 
-        public int find(int x) {
-            if (x != parent[x]) {
-                parent[x] = find(parent[x]);
-            }
-            return parent[x];
+    public int find(int x) {
+        if (x != parent[x]) {
+            parent[x] = find(parent[x]);
         }
+        return parent[x];
     }
 }

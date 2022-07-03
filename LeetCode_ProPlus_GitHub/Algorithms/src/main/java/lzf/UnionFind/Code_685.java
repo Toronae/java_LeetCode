@@ -47,7 +47,7 @@ public class Code_685 {
      * @return 构成环，返回 true
      */
     private boolean judgeCircle(int[][] edges, int len, int removeEdgeIndex) {
-        UnionFind unionFind = new UnionFind(len + 1);
+        UnionFind3 unionFind = new UnionFind3(len + 1);
         for (int i = 0; i < len; i++) {
             if (i == removeEdgeIndex) {
                 continue;
@@ -59,41 +59,40 @@ public class Code_685 {
         }
         return false;
     }
+}
+class UnionFind3 {
+    // 代表元法
+    private int[] parent;
 
-    private class UnionFind {
-        // 代表元法
-        private int[] parent;
-
-        public UnionFind(int n) {
-            parent = new int[n];
-            for (int i = 0; i < n; i++) {
-                parent[i] = i;
-            }
+    public UnionFind3(int n) {
+        parent = new int[n];
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
         }
+    }
 
-        public int find(int x) {
-            while (x != parent[x]) {
-                // 路径压缩（隔代压缩）
-                parent[x] = parent[parent[x]];
-                x = parent[x];
-            }
-            return x;
+    public int find(int x) {
+        while (x != parent[x]) {
+            // 路径压缩（隔代压缩）
+            parent[x] = parent[parent[x]];
+            x = parent[x];
         }
+        return x;
+    }
 
-        /**
-         * @param x
-         * @param y
-         * @return 如果合并成功返回 true
-         */
-        public boolean union(int x, int y) {
-            int rootX = find(x);
-            int rootY = find(y);
+    /**
+     * @param x
+     * @param y
+     * @return 如果合并成功返回 true
+     */
+    public boolean union(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
 
-            if (rootX == rootY) {
-                return false;
-            }
-            parent[rootX] = rootY;
-            return true;
+        if (rootX == rootY) {
+            return false;
         }
+        parent[rootX] = rootY;
+        return true;
     }
 }

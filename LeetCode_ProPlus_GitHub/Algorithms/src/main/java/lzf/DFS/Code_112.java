@@ -16,6 +16,9 @@ public class Code_112 {
         int targetSum = 22;
         System.out.println(new Code_112().hasPathSum(node1,targetSum));
     }
+
+    //从根节点开始，每当遇到一个节点的时候，从目标值里扣除节点值，一直到叶子节点判断目标值是不是被扣完。
+
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root==null) {
             return false;
@@ -25,4 +28,25 @@ public class Code_112 {
         }
         return hasPathSum(root.left,targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
     }
+
+    //声明一个变量记录已经经过的节点的值之和，每经过一个节点就加上这个节点的值，在叶子节点判断变量值是否为目标值。
+
+    public boolean hasPathSum1(TreeNode root, int sum) {
+        return  helper(root,0,sum);
+    }
+    public boolean helper(TreeNode root,int cur,int sum)
+    {
+        if(root==null){
+            return false;
+        }
+        cur=cur+root.val;
+        if(root.left==null&&root.right==null)
+        {
+            return cur==sum;
+        }else
+        {
+            return helper(root.left,cur,sum)|| helper(root.right,cur,sum);
+        }
+    }
+
 }

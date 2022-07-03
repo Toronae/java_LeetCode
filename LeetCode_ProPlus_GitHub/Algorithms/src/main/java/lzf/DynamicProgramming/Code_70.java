@@ -1,5 +1,9 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 完全背包
+ * 爬楼梯
+ */
 public class Code_70 {
     public static void main(String[] args) {
         int n = 10;

@@ -10,8 +10,8 @@ public class Code_121 {
         int[] dp = new int[prices.length];
         dp[0] = prices[0];
         for (int i = 1; i < prices.length; i++) {
-            dp[i] = (dp[i - 1] < prices[i]) ? dp[i - 1] : prices[i];
-            max = (prices[i] - dp[i]) > max ? prices[i] - dp[i] : max;
+            dp[i] = Math.min(dp[i - 1], prices[i]);
+            max = Math.max((prices[i] - dp[i]), max);
         }
         return max;
     }

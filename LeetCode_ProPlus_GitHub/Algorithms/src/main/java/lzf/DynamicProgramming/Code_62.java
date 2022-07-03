@@ -1,5 +1,8 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 总共有多少条不同的路径
+ */
 public class Code_62 {
     public static void main(String[] args) {
         int m = 3;

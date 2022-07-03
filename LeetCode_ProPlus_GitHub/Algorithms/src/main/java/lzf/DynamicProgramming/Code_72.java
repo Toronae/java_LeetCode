@@ -1,5 +1,9 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 编辑距离
+ * 最少操作数
+ */
 public class Code_72 {
     public static void main(String[] args) {
         String word1 = "horse";

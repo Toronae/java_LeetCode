@@ -1,5 +1,8 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 博弈问题
+ */
 public class Code_877 {
     public static void main(String[] args) {
         int[] piles = {5,3,4,5};

@@ -1,5 +1,8 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 下降路径最小和
+ */
 public class Code_887 {
     public static void main(String[] args) {
         int K = 1, N = 2;

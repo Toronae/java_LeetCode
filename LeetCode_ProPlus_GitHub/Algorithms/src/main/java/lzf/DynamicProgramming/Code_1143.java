@@ -1,5 +1,9 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 子序列问题（不连续）
+ * 最长公共子序列
+ */
 public class Code_1143 {
     public static void main(String[] args) {
         String text1 = "abcde";
@@ -7,6 +11,7 @@ public class Code_1143 {
         System.out.println(new Code_1143().longestCommonSubsequence(text1,text2));
     }
     public int longestCommonSubsequence(String text1, String text2) {
+
         int[][] dp = new int[text1.length() + 1][text2.length() + 1]; // 先对dp数组做初始化操作
         for (int i = 1 ; i <= text1.length() ; i++) {
             char char1 = text1.charAt(i - 1);

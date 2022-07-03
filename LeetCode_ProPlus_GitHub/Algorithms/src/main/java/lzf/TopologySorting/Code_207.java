@@ -1,11 +1,14 @@
 package lzf.TopologySorting;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 有向无环图，把一个 有向无环图 转成 线性的排序 就叫 拓扑排序,是专门应用于有向图的算法
  * 这道题用 BFS 和 DFS 都可以完成,BFS 的写法就叫「拓扑排序」
+ * 邻接表
  */
 public class Code_207 {
     public static void main(String[] args) {
@@ -13,13 +16,54 @@ public class Code_207 {
         int[][] prerequisites ={{1,0},{0,1}};
         System.out.println(new Code_207().canFinish(numCourses,prerequisites));
     }
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        //用于存储每个点（数字）的度
+        int[] indegrees=new int[numCourses];
+        //邻接表的准备
+        List<List<Integer>> adjacency=new ArrayList<>();
+        Queue<Integer> queue=new LinkedList<>();
+        for(int i=0;i<numCourses;i++){
+            adjacency.add(new ArrayList<>());
+        }//事先创建空的arraylist
+        for(int[]cp:prerequisites){
+            //cp[0]这个数前面连接了一个数cp[1]，所以度+1
+            indegrees[cp[0]]++;
+            //创建连接表,在cp[1]对应的位置,放入后连接的一个数字也就是cp[0],
+            adjacency.get(cp[1]).add(cp[0]);
+            //一个cp[0]可能对应多个cp[1],例如[2,3][2,4],list里的对应2的list便放入3,4两个数字，这里一定要理清楚
+        }
+        for(int i=0;i<numCourses;i++){
+            //如果度为0入队列
+            if(indegrees[i]==0){
+                queue.add(i);
+            }
+        }
+        while(!queue.isEmpty()){
+            //弹出度为0的数，其实也就是准备删除
+            int pre=queue.poll();
+            //删除后个数减少1，对应作者的图可以理解
+            numCourses--;
+            //找到入度0连接后面的数字们遍历，例如遍历上面2后连接的3,4
+            for(int cur:adjacency.get(pre)){
+                indegrees[cur]--;
+                //并且将他们的入度同时-1，如果此时度为0，继续入队列
+                if(indegrees[cur]==0){
+                    queue.add(cur);
+                }
+            }
+        }
+        return numCourses==0;
+    }
+
+    // 深度优先遍历
     // 定义建立每个节点u对应的邻接表
+
     List<List<Integer>> edges;
     // 每个节点u的访问状态值数组（0：未搜索 1：搜索中 2：搜索完成）
     int[] visited;
     // 返回结果状态 默认是可以的（是否能构成拓扑排序）
     boolean valid = true;
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
+    public boolean canFinish1(int numCourses, int[][] prerequisites) {
         // 邻接表初始化
         edges = new ArrayList<List<Integer>>();
         // 根据课程数量进一步初始化内层list

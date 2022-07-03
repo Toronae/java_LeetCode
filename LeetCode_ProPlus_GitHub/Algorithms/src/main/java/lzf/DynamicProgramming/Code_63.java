@@ -1,5 +1,8 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 总共有多少条不同的路径（有障碍物版）
+ */
 public class Code_63 {
     public static void main(String[] args) {
         int[][] obstacleGrid= new int[][]{{0,0,0},{0,1,0},{0,0,0}};

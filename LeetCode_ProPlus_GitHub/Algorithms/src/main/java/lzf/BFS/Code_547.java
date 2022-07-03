@@ -13,27 +13,32 @@ public class Code_547 {
     }
     //bfs
     public int findCircleNum(int[][] isConnected) {
-        int cities = isConnected.length;
-        boolean[] visited = new boolean[cities];
-        int provinces = 0;
-        Queue<Integer> queue = new LinkedList<Integer>();
-        for (int i = 0; i < cities; i++) {
+        // int[][] isConnected 是无向图的邻接矩阵，n 为无向图的顶点数量
+        int n = isConnected.length;
+        // 定义 boolean 数组标识顶点是否被访问
+        boolean[] visited = new boolean[n];
+
+        // 定义 cnt 来累计遍历过的连通域的数量
+        int cnt = 0;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            // 若当前顶点 i 未被访问，说明又是一个新的连通域，则bfs新的连通域且cnt+=1.
             if (!visited[i]) {
+                cnt++;
                 queue.offer(i);
+                visited[i] = true;
                 while (!queue.isEmpty()) {
-                    int j = queue.poll();
-                    visited[j] = true;
-                    for (int k = 0; k < cities; k++) {
-                        // 思路类似朋友圈，如果两者是朋友则加进来
-                        if (isConnected[j][k] == 1 && !visited[k]) {
-                            queue.offer(k);
+                    int v = queue.poll();
+                    for (int w = 0; w < n; w++) {
+                        if (isConnected[v][w] == 1 && !visited[w]) {
+                            visited[w] = true;
+                            queue.offer(w);
                         }
                     }
                 }
-                provinces++;
             }
         }
-        return provinces;
+        return cnt;
     }
 
     // dfs

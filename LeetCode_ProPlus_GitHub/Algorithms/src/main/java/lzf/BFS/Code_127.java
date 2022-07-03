@@ -31,6 +31,7 @@ public class Code_127 {
                         String newWord = currWord.substring(0, k) + j + currWord.substring(k + 1);
                         if (set.contains(newWord)) {
                             queue.offer(newWord);
+                            //避免重复访问
                             set.remove(newWord);
                         }
                     }

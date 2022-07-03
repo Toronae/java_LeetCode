@@ -1,5 +1,9 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 子序列问题（不连续）
+ * 最长递增子序列
+ */
 public class Code_300 {
     public static void main(String[] args) {
         int[] nums = {10,9,2,5,3,7,101,18};

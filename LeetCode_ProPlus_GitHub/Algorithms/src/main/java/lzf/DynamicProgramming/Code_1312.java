@@ -1,5 +1,8 @@
 package lzf.DynamicProgramming;
 
+/**
+ * 让字符串成为回文串的最少插入次数
+ */
 public class Code_1312 {
     public static void main(String[] args) {
         String s = "zzazz";

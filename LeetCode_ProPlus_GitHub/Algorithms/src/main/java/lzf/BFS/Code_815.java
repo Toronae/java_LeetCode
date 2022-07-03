@@ -3,6 +3,9 @@ package lzf.BFS;
 import java.util.*;
 import java.util.concurrent.locks.Lock;
 
+/**
+ * 建图题
+ */
 public class Code_815 {
     public static void main(String[] args) {
         int[][] routes = {{1,2,7},{3,6,7}};
@@ -13,9 +16,9 @@ public class Code_815 {
     public int numBusesToDestination(int[][] routes, int source, int target) {
         //存放<站点，有该站点的路线>
         Map<Integer, LinkedList<Integer>> map = new HashMap<Integer,LinkedList<Integer>>();
-        //存放已到过的站点
+        //存放已到过的路线
         Set<Integer> set = new HashSet<>();
-        //存放已去过的路线
+        //存放已去过的站点
         Set<Integer> set1 = new HashSet<>();
         //将起点加入已去过的站点
         set1.add(source);

@@ -12,28 +12,25 @@ public class Code_22 {
         int n = 3;
         System.out.println(new Code_22().generateParenthesis(n));
     }
-    static List<String> res = new ArrayList<String>();  //记录答案
-
+    List<String> res = new ArrayList<>();
     public List<String> generateParenthesis(int n) {
-        res.clear();
-        dfs(n, 0, 0, "");
+        dfs("",n,n);
         return res;
     }
-    public void dfs(int n ,int lc, int rc ,String str)
-    {
-        //递归边界
-        if( lc == n && rc == n) {
-            res.add(str);
+
+    private void dfs(String s, int left, int right) {
+        // 左右括号都不剩余了，递归终止
+        if (left==0 && right==0){
+            res.add(s);
+            return;
         }
-        else {
-            if(lc < n) {
-                //拼接左括号
-                dfs(n, lc + 1, rc, str + "(");
-            }
-            if(rc < n && lc > rc) {
-                //拼接右括号
-                dfs(n, lc, rc + 1, str + ")");
-            }
+        // 如果左括号还剩余的话，可以拼接左括号
+        if (left>0){
+            dfs(s+"(",left-1,right);
+        }
+        // 如果右括号剩余多于左括号剩余的话，可以拼接右括号
+        if (right>left){
+            dfs(s+")",left,right-1);
         }
     }
 
