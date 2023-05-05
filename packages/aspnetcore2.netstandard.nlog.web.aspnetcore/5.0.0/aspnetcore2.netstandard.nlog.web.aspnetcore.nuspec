@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AspNetCore2.NETStandard.NLog.Web.AspNetCore</id>
+    <version>5.0.0</version>
+    <authors>Julian Verdurmen</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <projectUrl>https://github.com/NLog/NLog.Web</projectUrl>
+    <description>NLog LoggerProvider for Microsoft.Extensions.Logging and ASP.NET Core platform. Adds helpers and layout renderers for websites and web applications.
+
+Supported platforms:
+
+- For ASP.NET Core 2, .NET Standard 2.0+ and .NET 4.6+</description>
+    <releaseNotes>## Improvements
+
+- [#749] Include ContentRootPath when scanning for NLog.config candidate (#749) (@snakefoot)
+- [#747] NLogRequestLogging - Added DurationThresholdMs + ExcludeRequestPaths (#747) (@snakefoot)
+
+Full changelog: https://github.com/NLog/NLog.Web/releases
+
+NLog 5 release post: https://nlog-project.org/2021/08/25/nlog-5-0-preview1-ready.html</releaseNotes>
+    <copyright>Copyright (c) 2015-2022 NLog Project - https://nlog-project.org/</copyright>
+    <tags>logging log NLog web aspnet aspnetcore MVC Microsoft.Extensions.Logging httpcontext session</tags>
+    <repository type="git" url="git://github.com/NLog/NLog.Web" commit="122f4e7bbc443c7c5ebacd2e84a08b1d77a593bb" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Hosting.Abstractions" version="2.1.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http" version="2.1.22" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Routing.Abstractions" version="2.1.0" exclude="Build,Analyzers" />
+        <dependency id="NLog.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="4.5.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETStandard2.0" />
+    </frameworkReferences>
+  </metadata>
+</package>
