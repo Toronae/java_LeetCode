@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Z.Expressions.Eval</id>
+    <version>4.0.54</version>
+    <title>C# Eval Expression | Eval Function</title>
+    <authors>ZZZ Projects</authors>
+    <owners>ZZZ Projects</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://zzzprojects.com/license-agreement/</licenseUrl>
+    <projectUrl>https://eval-expression.net/</projectUrl>
+    <iconUrl>https://zzzprojects.github.io/images/logo/logo-64.png</iconUrl>
+    <description>Evaluate, Compile and Execute C# code at runtime.
+
+Support: Dynamic LINQ, Extension Method, Expando Object, and more!
+
+Online Example: https://dotnetfiddle.net/COq6FC
+
+Include free and prime features.</description>
+    <summary>Evaluate, Compile and Execute C# code at runtime.
+
+Support: Dynamic LINQ, Extension Method, Expando Object, and more!</summary>
+    <copyright>Copyright © ZZZ Projects</copyright>
+    <tags>C# Eval Expression Function Evaluator Compile Compiler Execute Roslyn Scripting</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Reflection.Emit" version="4.3.0" />
+        <dependency id="System.Collections.Concurrent" version="4.3.0" />
+        <dependency id="System.Collections.NonGeneric" version="4.3.0" />
+        <dependency id="System.Data.Common" version="4.3.0" />
+        <dependency id="System.Linq.Queryable" version="4.3.0" />
+        <dependency id="System.Xml.XPath" version="4.3.0" />
+        <dependency id="NETStandard.Library" version="2.0.0" />
+        <dependency id="Microsoft.CSharp" version="4.5.0" />
+        <dependency id="System.Configuration.ConfigurationManager" version="4.5.0" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.5.0" />
+        <dependency id="System.Data.SqlClient" version="4.5.0" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" />
+        <dependency id="Microsoft.Extensions.Caching.Memory" version="2.0.0" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.Reflection.Emit" version="4.3.0" />
+        <dependency id="System.Collections.Concurrent" version="4.3.0" />
+        <dependency id="System.Collections.NonGeneric" version="4.3.0" />
+        <dependency id="System.Data.Common" version="4.3.0" />
+        <dependency id="System.Linq.Queryable" version="4.3.0" />
+        <dependency id="System.Xml.XPath" version="4.3.0" />
+        <dependency id="NETStandard.Library" version="2.0.0" />
+        <dependency id="Microsoft.CSharp" version="4.5.0" />
+        <dependency id="System.Configuration.ConfigurationManager" version="4.5.0" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.5.0" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" />
+        <dependency id="Microsoft.Extensions.Caching.Memory" version="2.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

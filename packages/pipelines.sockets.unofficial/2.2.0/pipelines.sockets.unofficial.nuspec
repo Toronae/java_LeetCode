@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Pipelines.Sockets.Unofficial</id>
+    <version>2.2.0</version>
+    <authors>Pipelines.Sockets.Unofficial</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/mgravell/Pipelines.Sockets.Unofficial</projectUrl>
+    <description>Package Description</description>
+    <releaseNotes>https://mgravell.github.io/Pipelines.Sockets.Unofficial/docs/releasenotes</releaseNotes>
+    <copyright>Marc Gravell 2018</copyright>
+    <repository type="git" url="https://github.com/mgravell/Pipelines.Sockets.Unofficial" commit="19b141f30fe2485dd79993be0ac87a9fc6b34b74" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="System.IO.Pipelines" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="System.IO.Pipelines" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="System.IO.Pipelines" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="System.IO.Pipelines" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.IO.Pipelines" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.IO.Pipelines" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

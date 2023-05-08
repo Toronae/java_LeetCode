@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NetBox</id>
+    <version>2.3.5</version>
+    <authors>Ivan Gavryliuk (@aloneguid)</authors>
+    <owners>Ivan Gavryliuk (@aloneguid)</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/aloneguid/support/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/aloneguid/support</projectUrl>
+    <iconUrl>http://i.isolineltd.com/nuget/netbox.png</iconUrl>
+    <description>Provides common simple helper functions to accelerate .NET development. Those vary by complexity and nature and include a lot of extension methods to calculate hashes (md5, crypto), string operations, short guids, string encoding, collection extensions, CSV support and many more.</description>
+    <copyright>Copyright (c) 2015-2019 by Ivan Gavryliuk</copyright>
+    <tags>net net-core common</tags>
+    <repository type="GitHub" url="https://github.com/aloneguid/support" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.6">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

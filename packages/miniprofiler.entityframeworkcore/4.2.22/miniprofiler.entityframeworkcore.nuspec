@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>MiniProfiler.EntityFrameworkCore</id>
+    <version>4.2.22</version>
+    <title>MiniProfiler for Entity Framework Core</title>
+    <authors>Nick Craver</authors>
+    <owners>Nick Craver</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://miniprofiler.com/</projectUrl>
+    <description>MiniProfiler: Integration for Entity Framework Core</description>
+    <releaseNotes>See https://miniprofiler.com/dotnet/Releases for more info</releaseNotes>
+    <tags>Entity Framework Entity Framework Core Profiler Performance Profiling Timing</tags>
+    <repository type="git" url="https://github.com/MiniProfiler/dotnet.git" branch="main" commit="4563a9e1ab4dd047fe5e985e62e3b0cdef25d8e3" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="MiniProfiler.Shared" version="4.2.22" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

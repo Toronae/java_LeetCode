@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>EFCore.BulkExtensions</id>
+    <version>6.2.9</version>
+    <title>EFCore.BulkExtensions</title>
+    <authors>borisdj</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>EFCoreBulk.png</icon>
+    <projectUrl>https://github.com/borisdj/EFCore.BulkExtensions</projectUrl>
+    <description>EntityFramework EF Core Bulk Batch Extensions for Insert Update Delete Read (CRUD) operations on SQL Server, PostgreSQL, SQLite</description>
+    <releaseNotes>Shadow prop and Postgres batch parse fix</releaseNotes>
+    <tags>EntityFrameworkCore Entity Framework Core EFCore EF Core SQL Server PostgreSQL SQLite Bulk Batch Extensions Insert Update Delete Read Truncate SaveChanges</tags>
+    <repository type="Git" url="https://github.com/borisdj/EFCore.BulkExtensions" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="EntityFrameworkCore.SqlServer.HierarchyId" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.SqlClient" version="2.1.4" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Sqlite.Core" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="NetTopologySuite.IO.SqlServerBytes" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Npgsql.EntityFrameworkCore.PostgreSQL" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.DiagnosticSource" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

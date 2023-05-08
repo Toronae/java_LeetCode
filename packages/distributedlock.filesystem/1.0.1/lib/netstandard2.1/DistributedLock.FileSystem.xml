@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DistributedLock.FileSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Medallion.Threading.FileSystem.FileDistributedLock">
+            <summary>
+            A distributed lock based on holding an exclusive handle to a lock file. The file will be deleted when the lock is released.
+            </summary>
+        </member>
+        <member name="F:Medallion.Threading.FileSystem.FileDistributedLock.MaxUnauthorizedAccessExceptionRetries">
+            <summary>
+            Since <see cref="T:System.UnauthorizedAccessException"/> can be thrown EITHER transiently or for permissions issues, we retry up to this many times
+            before we assume that the issue is non-transient. Empirically I've found this value to be reliable both locally and on AppVeyor (if there 
+            IS a problem there's little risk to trying more times because we'll eventually be failing hard).
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLock.#ctor(System.IO.FileInfo)">
+            <summary>
+            Constructs a lock which uses the provided <paramref name="lockFile"/> as the exact file name.
+            
+            Upon acquiring the lock, the file's directory will be created automatically if it does not already exist. The file 
+            will similarly be created if it does not already exist, and will be deleted when the lock is released.
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLock.#ctor(System.IO.DirectoryInfo,System.String)">
+            <summary>
+            Constructs a lock which will place a lock file in <paramref name="lockFileDirectory"/>. The file's name
+            will be based on <paramref name="name"/>, but with proper escaping/hashing to ensure that a valid file name is produced.
+            
+            Upon acquiring the lock, the file's directory will be created automatically if it does not already exist. The file 
+            will similarly be created if it does not already exist, and will be deleted when the lock is released.
+            </summary>
+        </member>
+        <member name="P:Medallion.Threading.FileSystem.FileDistributedLock.Name">
+            <summary>
+            Implements <see cref="P:Medallion.Threading.IDistributedLock.Name"/>
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLock.TryAcquire(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Attempts to acquire the lock synchronously. Usage: 
+            <code>
+                using (var handle = myLock.TryAcquire(...))
+                {
+                    if (handle != null) { /* we have the lock! */ }
+                }
+                // dispose releases the lock if we took it
+            </code>
+            </summary>
+            <param name="timeout">How long to wait before giving up on the acquisition attempt. Defaults to 0</param>
+            <param name="cancellationToken">Specifies a token by which the wait can be canceled</param>
+            <returns>A <see cref="T:Medallion.Threading.FileSystem.FileDistributedLockHandle"/> which can be used to release the lock or null on failure</returns>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLock.Acquire(System.Nullable{System.TimeSpan},System.Threading.CancellationToken)">
+            <summary>
+            Acquires the lock synchronously, failing with <see cref="T:System.TimeoutException"/> if the attempt times out. Usage: 
+            <code>
+                using (myLock.Acquire(...))
+                {
+                    /* we have the lock! */
+                }
+                // dispose releases the lock
+            </code>
+            </summary>
+            <param name="timeout">How long to wait before giving up on the acquisition attempt. Defaults to <see cref="F:System.Threading.Timeout.InfiniteTimeSpan"/></param>
+            <param name="cancellationToken">Specifies a token by which the wait can be canceled</param>
+            <returns>A <see cref="T:Medallion.Threading.FileSystem.FileDistributedLockHandle"/> which can be used to release the lock</returns>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLock.TryAcquireAsync(System.TimeSpan,System.Threading.CancellationToken)">
+            <summary>
+            Attempts to acquire the lock asynchronously. Usage: 
+            <code>
+                await using (var handle = await myLock.TryAcquireAsync(...))
+                {
+                    if (handle != null) { /* we have the lock! */ }
+                }
+                // dispose releases the lock if we took it
+            </code>
+            </summary>
+            <param name="timeout">How long to wait before giving up on the acquisition attempt. Defaults to 0</param>
+            <param name="cancellationToken">Specifies a token by which the wait can be canceled</param>
+            <returns>A <see cref="T:Medallion.Threading.FileSystem.FileDistributedLockHandle"/> which can be used to release the lock or null on failure</returns>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLock.AcquireAsync(System.Nullable{System.TimeSpan},System.Threading.CancellationToken)">
+            <summary>
+            Acquires the lock asynchronously, failing with <see cref="T:System.TimeoutException"/> if the attempt times out. Usage: 
+            <code>
+                await using (await myLock.AcquireAsync(...))
+                {
+                    /* we have the lock! */
+                }
+                // dispose releases the lock
+            </code>
+            </summary>
+            <param name="timeout">How long to wait before giving up on the acquisition attempt. Defaults to <see cref="F:System.Threading.Timeout.InfiniteTimeSpan"/></param>
+            <param name="cancellationToken">Specifies a token by which the wait can be canceled</param>
+            <returns>A <see cref="T:Medallion.Threading.FileSystem.FileDistributedLockHandle"/> which can be used to release the lock</returns>
+        </member>
+        <member name="T:Medallion.Threading.FileSystem.FileDistributedLockHandle">
+            <summary>
+            Implements <see cref="T:Medallion.Threading.IDistributedSynchronizationHandle"/>
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLockHandle.Dispose">
+            <summary>
+            Releases the lock
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedLockHandle.DisposeAsync">
+            <summary>
+            Releases the lock
+            </summary>
+        </member>
+        <member name="T:Medallion.Threading.FileSystem.FileDistributedSynchronizationProvider">
+            <summary>
+            Implements <see cref="T:Medallion.Threading.IDistributedLockProvider"/> for <see cref="T:Medallion.Threading.FileSystem.FileDistributedLock"/>
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedSynchronizationProvider.#ctor(System.IO.DirectoryInfo)">
+            <summary>
+            Constructs a provider that scopes lock files within the provided <paramref name="lockFileDirectory"/>.
+            </summary>
+        </member>
+        <member name="M:Medallion.Threading.FileSystem.FileDistributedSynchronizationProvider.CreateLock(System.String)">
+            <summary>
+            Constructs a <see cref="T:Medallion.Threading.FileSystem.FileDistributedLock"/> with the given <paramref name="name"/>.
+            </summary>
+        </member>
+        <member name="T:Medallion.Threading.FileSystem.FileNameValidationHelper">
+            <summary>
+            Helper class for validating file names and converting lock names to valid file names.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Elsa.Persistence.EntityFramework.Core</id>
+    <version>2.11.1</version>
+    <authors>Elsa Contributors</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/elsa-workflows/elsa-core</projectUrl>
+    <iconUrl>https://elsa-workflows.github.io/elsa-core/img/android-icon-192x192.png</iconUrl>
+    <description>Elsa is a set of workflow libraries and tools that enable lean and mean workflowing capabilities in any .NET Core application.
+            This package provides Entity Framework Core entities used by the various Elsa persistence EF Core providers.</description>
+    <copyright>2021</copyright>
+    <tags>elsa, workflows, efcore</tags>
+    <repository type="git" url="https://github.com/elsa-workflows/elsa-core" commit="35fe0ef0e6be62e27c312e84372b40c0a3b4202f" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Elsa.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="EFCore.BulkExtensions" version="6.2.9" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="6.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net7.0">
+        <dependency id="Elsa.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Elsa.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="EFCore.BulkExtensions" version="5.4.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="5.0.10" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
