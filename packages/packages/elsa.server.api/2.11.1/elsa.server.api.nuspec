@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Elsa.Server.Api</id>
+    <version>2.11.1</version>
+    <authors>Elsa Contributors</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/elsa-workflows/elsa-core</projectUrl>
+    <iconUrl>https://elsa-workflows.github.io/elsa-core/img/android-icon-192x192.png</iconUrl>
+    <description>Elsa is a set of workflow libraries and tools that enable lean and mean workflowing capabilities in any .NET Core application.
+            This package provides API endpoints to interact with the workflow host.</description>
+    <copyright>2021</copyright>
+    <tags>elsa, workflows, asp.net core</tags>
+    <repository type="git" url="https://github.com/elsa-workflows/elsa-core" commit="35fe0ef0e6be62e27c312e84372b40c0a3b4202f" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Elsa" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Elsa.Server.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="3.1.16" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
+        <dependency id="NodaTime.Serialization.SystemTextJson" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Annotations" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Filters" version="7.0.2" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.SwaggerGen" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="Elsa" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Elsa.Server.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="5.0.10" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
+        <dependency id="NodaTime.Serialization.SystemTextJson" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Annotations" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Filters" version="7.0.2" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.SwaggerGen" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Elsa" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Elsa.Server.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
+        <dependency id="NodaTime.Serialization.SystemTextJson" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Annotations" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Filters" version="7.0.2" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.SwaggerGen" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net7.0">
+        <dependency id="Elsa" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Elsa.Server.Core" version="2.11.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.2" exclude="Build,Analyzers" />
+        <dependency id="NodaTime.Serialization.SystemTextJson" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Annotations" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.Filters" version="7.0.2" exclude="Build,Analyzers" />
+        <dependency id="Swashbuckle.AspNetCore.SwaggerGen" version="6.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+      <group targetFramework="net5.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+      <group targetFramework="net6.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+      <group targetFramework="net7.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

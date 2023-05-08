@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Autofac.Extras.Quartz</id>
+    <version>5.1.0</version>
+    <authors>shatl</authors>
+    <owners>shatl</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/alphacloud/Autofac.Extras.Quartz</projectUrl>
+    <description>Autofac integration for Quartz.Net.</description>
+    <releaseNotes>https://github.com/alphacloud/Autofac.Extras.Quartz/releases/tag/5.1.0</releaseNotes>
+    <copyright>(c) Alphacloud</copyright>
+    <tags>quartz autofac quartz-net alphacloud</tags>
+    <repository type="git" url="https://github.com/alphacloud/Autofac.Extras.Quartz" commit="4099a93b629b89de57c575a9eb2b2cb450e20879" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="Autofac" version="[5.1.2, 6.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Quartz" version="[3.0.7, 4.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Autofac" version="[5.1.2, 6.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Quartz" version="[3.0.7, 4.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Autofac" version="[5.1.2, 6.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Quartz" version="[3.0.7, 4.0.0)" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

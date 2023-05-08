@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>McMaster.Extensions.CommandLineUtils</id>
+    <version>4.0.1</version>
+    <authors>Nate McMaster</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/natemcmaster/CommandLineUtils</projectUrl>
+    <iconUrl>https://natemcmaster.github.io/CommandLineUtils/logo.png</iconUrl>
+    <description>Command-line parsing API and utilities for console applications.
+
+Commonly used types:
+
+McMaster.Extensions.CommandLineUtils.CommandLineApplication
+McMaster.Extensions.CommandLineUtils.CommandOption
+McMaster.Extensions.CommandLineUtils.IConsole
+McMaster.Extensions.CommandLineUtils.Prompt
+McMaster.Extensions.CommandLineUtils.ArgumentEscaper
+
+ A community-maintained fork of Microsoft.Extensions.CommandLineUtils, plus many enhancements.</description>
+    <releaseNotes>Changes since 3.1.0:
+
+Features:
+
+* @scott-xu and @natemcmaster: feature: add API for setting default value on options and arguments, and display them in help text (#389 and #420)
+* @natemcmaster: cleanup: make .Values read-only on CommandArgument/Option (#406)
+* @natemcmaster: Make options, arguments, and commands read-only collections on CommandLineApplication (#407)
+
+Fixes:
+
+* @natemcmaster: fix: pass the generic argument version in callback on .Option() and Argument() (#405)
+* @natemcmaster: add .NET Standard 2.1 and fix nullable type references (#424 and #425)
+* @natemcmaster: fix new CI to correctly publish symbols to nuget.org
+* @scott-xu: show option types in help text when OptionAttribute.Template is set (#429)
+* @skirchner989: change to not throw when a validator is not of type AttributeValidator (#431)
+* @natemcmaster: don't mask OperationCanceledException triggered by SIGINT (#483)
+
+Updates in 4.0.1 patch:
+* @xoofx: use explicit constructors on validation attributes to workaround .NET 6 runtime trimming error (#491)
+* @jakubqwe: support the Description field of VersionOptionFromMemberAttribute (#490)
+    
+
+See more details here: https://github.com/natemcmaster/CommandLineUtils/blob/main/CHANGELOG.md#v401</releaseNotes>
+    <copyright>Copyright © Nate McMaster</copyright>
+    <tags>commandline parsing</tags>
+    <repository type="git" url="https://github.com/natemcmaster/CommandLineUtils.git" commit="171cf80595b7e66d7222378bf011a8e0428e9f20" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="System.Runtime.InteropServices.RuntimeInformation" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ValueTuple" version="4.5.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.ComponentModel.Annotations" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.ComponentModel.Annotations" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MiniProfiler.EntityFrameworkCore</name>
+    </assembly>
+    <members>
+        <member name="T:StackExchange.Profiling.MiniProfilerBaseOptionsExtensions">
+            <summary>
+            Extension methods for the MiniProfiler.EntityFrameworkCore.
+            </summary>
+        </member>
+        <member name="M:StackExchange.Profiling.MiniProfilerBaseOptionsExtensions.AddEntityFramework``1(``0)">
+            <summary>
+            Adds Entity Framework Core profiling for MiniProfiler via DiagnosticListener.
+            </summary>
+            <typeparam name="T">The specific options type to chain with.</typeparam>
+            <param name="options">The <see cref="T:StackExchange.Profiling.Internal.MiniProfilerBaseOptions" /> to register on (just for chaining).</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="options"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:StackExchange.Profiling.Data.RelationalDiagnosticListener">
+            <summary>
+            Diagnostic listener for Microsoft.EntityFrameworkCore.* events
+            </summary>
+        </member>
+        <member name="P:StackExchange.Profiling.Data.RelationalDiagnosticListener.ListenerName">
+            <summary>
+            Diagnostic Listener name to handle
+            </summary>
+        </member>
+        <member name="M:StackExchange.Profiling.Data.RelationalDiagnosticListener.OnCompleted">
+            <summary>
+            Notifies the observer that the provider has finished sending push-based notifications.
+            </summary>
+        </member>
+        <member name="M:StackExchange.Profiling.Data.RelationalDiagnosticListener.OnError(System.Exception)">
+            <summary>
+            Notifies the observer that the provider has experienced an error condition.
+            </summary>
+            <param name="error">An object that provides additional information about the error.</param>
+        </member>
+        <member name="M:StackExchange.Profiling.Data.RelationalDiagnosticListener.OnNext(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Provides the observer with new data.
+            </summary>
+            <param name="kv">The current notification information.</param>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.MiniProfilerServiceCollectionExtensions">
+            <summary>
+            Extension methods for the MiniProfiler.EntityFrameworkCore.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.MiniProfilerServiceCollectionExtensions.AddEntityFramework(Microsoft.Extensions.DependencyInjection.IMiniProfilerBuilder)">
+            <summary>
+            Adds Entity Framework Core profiling for MiniProfiler via DiagnosticListener.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.DependencyInjection.IMiniProfilerBuilder" /> to add services to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="builder"/> is <c>null</c>.</exception>
+        </member>
+    </members>
+</doc>

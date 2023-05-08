@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Rebus</id>
+    <version>7.0.0</version>
+    <authors>mookid8000</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>little_rebusbus2_copy-500x500.png</icon>
+    <projectUrl>https://rebus.fm/what-is-rebus/</projectUrl>
+    <description>Rebus is a lean service bus for .NET</description>
+    <copyright>Copyright Rebus FM ApS 2012</copyright>
+    <tags>rebus queue messaging service bus</tags>
+    <repository type="git" url="https://github.com/rebus-org/Rebus" commit="15cf71f26b2caa53aa8dca3ed5dcbb0c7ece1ebc" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="[12.0.1, 14.0.0)" exclude="Build,Analyzers" />
+        <dependency id="system.text.json" version="[5.0.0, 8.0.0)" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

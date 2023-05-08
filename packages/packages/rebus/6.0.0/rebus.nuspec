@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Rebus</id>
+    <version>6.0.0</version>
+    <authors>mookid8000</authors>
+    <owners>mookid8000</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/rebus-org/Rebus/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://rebus.fm/what-is-rebus/</projectUrl>
+    <iconUrl>https://github.com/mookid8000/Rebus/raw/master/artwork/little_rebusbus2_copy-200x200.png</iconUrl>
+    <description>Rebus is a lean service bus for .NET</description>
+    <copyright>Copyright 2012-2019</copyright>
+    <tags>rebus queue messaging service bus</tags>
+    <repository type="git" url="https://github.com/rebus-org/Rebus" commit="d3d2c81a4d8b76780aff2f0e061ade8ec64d2036" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Newtonsoft.Json" version="11.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.6">
+        <dependency id="Newtonsoft.Json" version="11.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.5.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Dynamic.Runtime" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit.LightWeight" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Microsoft.CSharp" version="4.5.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Dynamic.Runtime" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit.LightWeight" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5, .NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

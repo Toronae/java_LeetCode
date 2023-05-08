@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFrameworkCore.SqlServer.HierarchyId.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.EntityFrameworkCore.HierarchyId">
+            <summary>
+            Represents a position in a hierarchical structure, specifying depth and breadth.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.GetRoot">
+            <summary>
+            Gets the root node of the hierarchy.
+            </summary>
+            <returns>The root node of the hierarchy.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.Parse(System.String)">
+            <summary>
+            Converts the canonical string representation of a node to a <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value.
+            </summary>
+            <param name="input">The string representation of a node.</param>
+            <returns>A <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads a <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value from the specified reader.
+            </summary>
+            <param name="reader">The reader.</param>
+            <returns>A <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes this <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value to the specified writer.
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.CompareTo(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.GetAncestor(System.Int32)">
+            <summary>
+            Gets the node <paramref name="n"/> levels up the hierarchical tree.
+            </summary>
+            <param name="n">The number of levels to ascend in the hierarchy.</param>
+            <returns>A <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value representing the <paramref name="n"/>th ancestor of this node or null if <paramref name="n"/> is greater than <see cref="M:Microsoft.EntityFrameworkCore.HierarchyId.GetLevel"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="n"/> is negative.</exception>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.GetDescendant(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Gets the value of a descendant node that is greater than <paramref name="child1"/> and less than <paramref name="child2"/>.
+            </summary>
+            <param name="child1">The lower bound.</param>
+            <param name="child2">The upper bound.</param>
+            <returns>A <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.GetLevel">
+            <summary>
+            Gets the level of this node in the hierarchical tree.
+            </summary>
+            <returns>The depth of this node. The root node is level 0.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.GetReparentedValue(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Gets a value representing the location of a new node that has a path from <paramref name="newRoot"/> equal to the path from <paramref name="oldRoot"/> to this, effectively moving this to the new location.
+            </summary>
+            <param name="oldRoot">An ancestor of this node specifying the endpoint of the path segment to be moved.</param>
+            <param name="newRoot">The node that represents the new ancestor.</param>
+            <returns>A <see cref="T:Microsoft.EntityFrameworkCore.HierarchyId"/> value or null if <paramref name="oldRoot"/> or <paramref name="newRoot"/> is null.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.IsDescendantOf(Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Gets a value indicating whether this node is a descendant of <paramref name="parent"/>.
+            </summary>
+            <param name="parent">The parent to test against.</param>
+            <returns>True if this node is in the sub-tree rooted at <paramref name="parent"/>; otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.op_Equality(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Evaluates whether two nodes are equal.
+            </summary>
+            <param name="hid1">The first node to compare.</param>
+            <param name="hid2">The second node to compare.</param>
+            <returns>True if <paramref name="hid1"/> and <paramref name="hid2"/> are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.op_Inequality(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Evaluates whether two nodes are unequal.
+            </summary>
+            <param name="hid1">The first node to compare.</param>
+            <param name="hid2">The second node to compare.</param>
+            <returns>True if <paramref name="hid1"/> and <paramref name="hid2"/> are unequal; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.op_LessThan(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Evaluates whether one node is less than another.
+            </summary>
+            <param name="hid1">The first node to compare.</param>
+            <param name="hid2">The second node to compare.</param>
+            <returns>True if <paramref name="hid1"/> is less than <paramref name="hid2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.op_GreaterThan(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Evaluates whether one node is greater than another.
+            </summary>
+            <param name="hid1">The first node to compare.</param>
+            <param name="hid2">The second node to compare.</param>
+            <returns>True if <paramref name="hid1"/> is greater than <paramref name="hid2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.op_LessThanOrEqual(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Evaluates whether one node is less than or equal to another.
+            </summary>
+            <param name="hid1">The first node to compare.</param>
+            <param name="hid2">The second node to compare.</param>
+            <returns>True if <paramref name="hid1"/> is less than or equal to <paramref name="hid2"/>; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.HierarchyId.op_GreaterThanOrEqual(Microsoft.EntityFrameworkCore.HierarchyId,Microsoft.EntityFrameworkCore.HierarchyId)">
+            <summary>
+            Evaluates whether one node is greater than or equal to another.
+            </summary>
+            <param name="hid1">The first node to compare.</param>
+            <param name="hid2">The second node to compare.</param>
+            <returns>True if <paramref name="hid1"/> is greater than or equal to <paramref name="hid2"/>; otherwise, false.</returns>
+        </member>
+    </members>
+</doc>

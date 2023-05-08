@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog.Web.AspNetCore</id>
+    <version>5.2.0</version>
+    <authors>Julian Verdurmen</authors>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <projectUrl>https://github.com/NLog/NLog.Web</projectUrl>
+    <description>NLog LoggerProvider for Microsoft.Extensions.Logging and ASP.NET Core platform. Adds helpers and layout renderers for websites and web applications.
+
+Supported platforms:
+
+- For ASP.NET Core 6, .NET 6
+- For ASP.NET Core 5, .NET 5
+- For ASP.NET Core 3, .NET Core 3.1
+- For ASP.NET Core 2, .NET Standard 2.0+ and .NET 4.6+</description>
+    <releaseNotes>- Changed LoadConfigurationFromAppSettings to prioritize current directory (#885) (@snakefoot)
+- Changed AspNetAppBasePathLayoutRenderer to prioritize current directory (#887) (@snakefoot)
+- Add ObjectPath to AspNetItemValueLayoutRenderer as better alternative to EvaluateAsNestedProperties (#890) (@bakgerman)
+- Add ObjectPath to AspNetSessionValueLayoutRenderer as better alternative to EvaluateAsNestedProperties (#894) (@snakefoot)
+- Use CallerArgumentExpressionAttribute in helper method for throwing ArgumentNullException (#889) (@bakgerman)
+- Skip allocating RouteData when only need to lookup single value (#891)  (@snakefoot)
+- Use RegisterConfigSettings instead of ConfigSettingLayoutRenderer (#878 + #879) (@snakefoot)
+- Updated dependency NLog.Extensions.Logging v5.2.0 (#894) (@snakefoot)
+
+List of major changes in NLog 5.0: https://nlog-project.org/2022/05/16/nlog-5-0-finally-ready.html
+
+Full changelog: https://github.com/NLog/NLog.Web/releases
+
+List of available Layout Renderers: https://nlog-project.org/config/?tab=layout-renderers&amp;search=package:nlog.web.aspnetcore</releaseNotes>
+    <copyright>Copyright (c) 2015-2022 NLog Project - https://nlog-project.org/</copyright>
+    <tags>logging log NLog web aspnet aspnetcore MVC Microsoft.Extensions.Logging httpcontext</tags>
+    <repository type="git" url="git://github.com/NLog/NLog.Web" commit="a4ea4734824a1cb9514417ce4165a234fd2d27a9" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="Microsoft.AspNetCore.Hosting.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http" version="2.1.22" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Routing.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="NLog.Extensions.Logging" version="5.2.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="4.5.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="NLog.Extensions.Logging" version="5.2.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="NLog.Extensions.Logging" version="5.2.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="NLog.Extensions.Logging" version="5.2.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Hosting.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http" version="2.1.22" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Routing.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="NLog.Extensions.Logging" version="5.2.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Encodings.Web" version="4.5.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+      <group targetFramework="net5.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+      <group targetFramework="net6.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+      <group targetFramework=".NETFramework4.6.1" />
+      <group targetFramework=".NETStandard2.0" />
+    </frameworkReferences>
+  </metadata>
+</package>

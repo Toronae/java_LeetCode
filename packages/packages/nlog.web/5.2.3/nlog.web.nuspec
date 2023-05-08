@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NLog.Web</id>
+    <version>5.2.3</version>
+    <authors>Julian Verdurmen</authors>
+    <license type="expression">BSD-3-Clause</license>
+    <licenseUrl>https://licenses.nuget.org/BSD-3-Clause</licenseUrl>
+    <icon>N.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/NLog/NLog.Web</projectUrl>
+    <description>NLog logging for ASP.NET and ASP.NET MVC. Includes targets and layout renderers for websites and web applications.
+
+This package is for ASP.NET 3.5+
+
+For ASP.NET Core: Check https://www.nuget.org/packages/NLog.Web.AspNetCore</description>
+    <releaseNotes>Remember to register NLog.Web in NLog.config
+
+&lt;extensions&gt;
+  &lt;add assembly="NLog.Web" /&gt;
+&lt;/extensions&gt;
+
+Full changelog: https://github.com/NLog/NLog.Web/releases
+
+List of available Layout Renderers: https://nlog-project.org/config/?tab=layout-renderers&amp;search=package:nlog.web</releaseNotes>
+    <copyright>Copyright (c) 2015-2023 NLog Project - https://nlog-project.org/</copyright>
+    <tags>nlog log logging target layoutrenderer web asp.net MVC httpcontext</tags>
+    <repository type="git" url="https://github.com/NLog/NLog.Web.git" commit="05c0d8b8afdd5670e8bcac44af147eeda644e0e6" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5">
+        <dependency id="NLog" version="5.1.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.6">
+        <dependency id="NLog" version="5.1.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web.Abstractions" targetFramework=".NETFramework3.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework3.5, .NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Web.Routing" targetFramework=".NETFramework3.5, .NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Elsa.Designer.Components.Web.props" />
+</Project>

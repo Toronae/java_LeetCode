@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EFCore.BulkExtensions</name>
+    </assembly>
+    <members>
+        <member name="M:EFCore.BulkExtensions.BatchUtil.GetSqlUpdate``1(System.Linq.IQueryable{``0},Microsoft.EntityFrameworkCore.DbContext,System.Type,System.Linq.Expressions.Expression{System.Func{``0,``0}})">
+            <summary>
+            get Update Sql
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EFCore.BulkExtensions.BatchUtil.CreateUpdateBody(EFCore.BulkExtensions.BatchUpdateCreateBodyData,System.Linq.Expressions.Expression,System.String)">
+            <summary>
+            Recursive analytic expression 
+            </summary>
+            <param name="tableAlias"></param>
+            <param name="expression"></param>
+            <param name="sqlColumns"></param>
+            <param name="sqlParameters"></param>
+        </member>
+        <member name="M:EFCore.BulkExtensions.BatchUtil.TryCreateRelationalMappingParameter(System.String,System.String,System.Object,EFCore.BulkExtensions.TableInfo)">
+            <summary>
+            Attempt to create a DbParameter using the <see cref="M:Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.CreateParameter(System.Data.Common.DbCommand,System.String,System.Object,System.Nullable{System.Boolean})"/>
+            call for the specified column name.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.PreserveInsertOrder">
+            <summary>
+                Makes sure that entites are inserted to Db as ordered in entitiesList.
+            </summary>
+            <value>
+                Default value is <c>true</c>, if table has Identity column (autoincrement) and IDs being 0 in list they will temporarily be changed automatically from 0s into range -N:-1.
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.SetOutputIdentity">
+            <summary>
+                When set IDs zero values will be updated to new ones from database (Have function only when PK has Identity)
+            </summary>
+            <remarks>
+                Useful when BulkInsert is done to multiple related tables, to get PK of table and to set it as FK for second one.
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.BatchSize">
+            <summary>
+                Propagated to SqlBulkCopy util object.
+            </summary>
+            <value>
+                Defalut value is 2000.
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.NotifyAfter">
+            <summary>
+                Propagated to SqlBulkCopy util object. When not set will have same value of BatchSize, each batch one notification.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.BulkCopyTimeout">
+            <summary>
+                Propagated to SqlBulkCopy util object. When not set has SqlBulkCopy default which is 30 seconds and if set to 0 it indicates no limit.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.EnableStreaming">
+            <summary>
+                Propagated to SqlBulkCopy util object.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.UseTempDB">
+            <summary>
+                When set to <c>true</c> Temp tables are created as #Temporary. More info: <c>https://www.sqlservertutorial.net/sql-server-basics/sql-server-temporary-tables/</c>
+            </summary>
+            <remarks>
+                If used then BulkOperation has to be inside Transaction, otherwise destination table gets dropped too early because transaction ends before operation is finished.
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.UniqueTableNameTempDb">
+            <summary>
+                When set to false temp table name will be only 'Temp' without random numbers
+            </summary>
+            <value>
+                Default value is <c>true</c>.
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.CustomDestinationTableName">
+            <summary>
+                Enables specifying custom name of table in Db that does not have to be mapped to Entity.
+            </summary>
+            <value>
+                Can be set with 'TableName' only or with 'Schema.TableName'.
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.TrackingEntities">
+            <summary>
+                Can be set to True if want to have tracking of entities from BulkRead or when SetOutputIdentity is set.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.WithHoldlock">
+            <summary>
+                Sql MERGE Statement contains 'WITH (HOLDLOCK)', otherwise if set to <c>false</c> it is removed.
+            </summary>
+            <value>
+                Default value is <c>true</c>.
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.CalculateStats">
+            <summary>
+                When set to <c>true</c> the result is return in <c>BulkConfig.StatsInfo { StatsNumberInserted, StatsNumberUpdated}</c>c>.
+            </summary>
+            <remarks>
+                If used for pure Insert (with Batching) then SetOutputIdentity should also be configured because Merge have to be used.
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.IgnoreRowVersion">
+            <summary>
+                Ignore handling RowVersion column
+            </summary>
+            <value>
+                Default value is <c>false</c>, if table have any RowVersion column, it will have special handling and needs to be binary
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.StatsInfo">
+            <summary>
+                Used as object for returning Stats Info when <c>BulkConfig.CalculateStats = true</c>
+            </summary>
+            <value>
+                Contains info in Properties: <c>StatsNumberInserted, StatsNumberUpdated, StatsNumberDeleted</c>
+            </value>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.TimeStampInfo">
+            <summary>
+                Used as object for returning TimeStamp Info when <c>BulkConfig.DoNotUpdateIfTimeStampChanged = true</c>
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.PropertiesToInclude">
+            <summary>
+                When doing Insert/Update one or more properties can be exclude by adding their names into PropertiesToExclude.
+            </summary>
+            <remarks>
+                If need to change less then half column then PropertiesToInclude can be used. Setting both Lists are not allowed.
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.PropertiesToIncludeOnCompare">
+            <summary>
+                By adding a column name to this list, will allow it to be inserted and updated but will not update the row if any of the these columns in that row did not change.
+            </summary>
+            <remarks>
+                For example, if importing data and want to keep an internal UpdateDate, add all columns except that one, or use PropertiesToExcludeOnCompare.
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:EFCore.BulkExtensions.BulkConfig.PropertiesToIncludeOnUpdate" -->
+        <member name="P:EFCore.BulkExtensions.BulkConfig.PropertiesToExclude">
+            <summary>
+                When doing Insert/Update properties to affect can be explicitly selected by adding their names into PropertiesToInclude.
+            </summary>
+            <remarks>
+                If need to change more then half columns then PropertiesToExclude can be used. Setting both Lists are not allowed.
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.PropertiesToExcludeOnCompare">
+            <summary>
+                By adding a column name to this list, will allow it to be inserted and updated but will not update the row if any of the others columns in that row did not change.
+            </summary>
+            <remarks>
+                For example, if importing data and want to keep an internal UpdateDate, add that columns to the UpdateDate.
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.PropertiesToExcludeOnUpdate">
+            <summary>
+                Selected properties are excluded from being updated, can differ from PropertiesToExclude that can be used for Insert config only
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.UpdateByProperties">
+            <summary>
+                Used for specifying custom properties, by which we want update to be done.
+            </summary>
+            <remarks>
+                If Identity column exisit and is not added in UpdateByProp it will be excluded automatically
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.EnableShadowProperties">
+            <summary>
+                When set to <c>true</c> it will adding (normal) Shadow Property and persist value. It Disables automatic discrimator, so it shoud be set manually.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.ShadowPropertyValue">
+            <summary>
+                Returns value for shadow properties, EnableShadowProperties = true
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.TemporalColumns">
+            <summary>
+               Shadow columns used for Temporal table. Has defaults elements: 'PeriodStart' and 'PeriodEnd'. Can be changed if temporal columns have custom names.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.IncludeGraph">
+            <summary>
+                When set all entites that have relations with main ones from the list are also merged into theirs tables.
+            </summary>
+            <remarks>
+                Essentially enables with one call bulk ops on multiple tables that are connected, like parent-child relationship with FK
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.OmitClauseExistsExcept">
+            <summary>
+                Removes the clause 'EXISTS ... EXCEPT' from Merge statement which then updates even same data, useful when need to always active triggers.
+            </summary>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.DoNotUpdateIfTimeStampChanged">
+            <summary>
+                When set to <c>true</c> rows with concurrency conflict, meaning TimeStamp column is changed since read, will not be updated their entities will be loaded into <c>BulkConfig.TimeStampInfo { NumberOfSkippedForUpdate, EntitiesOutput }</c>.
+            </summary>
+            <remarks>
+                After reading skipped from EntitiesOutput, they can either be left skipped, or updated again, or thrown exception or rollback entire Update. (example Tests.EFCoreBulkTestAtypical.TimeStampTest)
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.SRID">
+            <summary>
+                Spatial Reference Identifier - for SQL Server with NetTopologySuite. Default value is <c>4326</c>.
+            </summary>
+            <remarks>
+                More info: <c>https://docs.microsoft.com/en-us/sql/relational-databases/spatial/spatial-reference-identifiers-srids</c>
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.DateTime2PrecisionForceRound">
+            <summary>
+                When type dbtype datetime2 has precision less then default 7, for example 'datetime2(3)' SqlBulkCopy does Floor instead of Round so Rounding done in memory to make sure inserted values are same as with regular SaveChanges
+            </summary>
+            <remarks>
+                Only for SqlServer
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.OnSaveChangesSetFK">
+            <summary>
+                When using BulkSaveChanges with multiply entries that have FK relationship which is Db generated, this set proper value after reading parent PK from Db.
+                IF PK are generated in memory like are some Guid then this can be set to false for better efficiency.
+            </summary>
+            <remarks>
+                Only used with BulkSaveChanges
+            </remarks>
+        </member>
+        <member name="P:EFCore.BulkExtensions.BulkConfig.SqlBulkCopyOptions">
+            <summary>
+                Enum with [Flags] attribute which enables specifying one or more options.
+            </summary>
+            <value>
+                <c>Default, KeepIdentity, CheckConstraints, TableLock, KeepNulls, FireTriggers, UseInternalTransaction</c>
+            </value>
+        </member>
+        <member name="M:EFCore.BulkExtensions.BulkConfig.SetSynchronizeFilter``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+                A filter on entities to delete when using BulkInsertOrUpdateOrDelete.
+            </summary>
+        </member>
+        <member name="T:EFCore.BulkExtensions.Helpers.GenericsHelpers">
+            <summary>
+            This class helps to extract properties of the incoming type which have default sql values
+            </summary>
+        </member>
+        <member name="M:EFCore.BulkExtensions.SQLAdapters.SQLServer.SqlOperationsServerAdapter.GetDataTable``1(Microsoft.EntityFrameworkCore.DbContext,System.Type,System.Collections.Generic.IList{``0},Microsoft.Data.SqlClient.SqlBulkCopy,EFCore.BulkExtensions.TableInfo)">
+            <summary>
+            Supports <see cref="T:Microsoft.Data.SqlClient.SqlBulkCopy"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <param name="type"></param>
+            <param name="entities"></param>
+            <param name="sqlBulkCopy"></param>
+            <param name="tableInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EFCore.BulkExtensions.SQLAdapters.SQLServer.SqlOperationsServerAdapter.InnerGetDataTable``1(Microsoft.EntityFrameworkCore.DbContext,System.Type@,System.Collections.Generic.IList{``0},EFCore.BulkExtensions.TableInfo)">
+            <summary>
+            Common logic for two versions of GetDataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="context"></param>
+            <param name="type"></param>
+            <param name="entities"></param>
+            <param name="tableInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EFCore.BulkExtensions.SqlQueryBuilder.DeleteTable(System.String)">
+            <summary>
+            Used for Sqlite, Truncate table 
+            </summary>
+        </member>
+        <member name="M:EFCore.BulkExtensions.TableInfo.SetSqlBulkCopyConfig``1(Microsoft.Data.SqlClient.SqlBulkCopy,System.Collections.Generic.IList{``0},System.Boolean,System.Action{System.Decimal})">
+            <summary>
+            Supports <see cref="T:Microsoft.Data.SqlClient.SqlBulkCopy"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sqlBulkCopy"></param>
+            <param name="entities"></param>
+            <param name="setColumnMapping"></param>
+            <param name="progress"></param>
+        </member>
+    </members>
+</doc>
