@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ben.Demystifier</id>
+    <version>0.4.1</version>
+    <title>Ben.Demystifier</title>
+    <authors>Ben Adams</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/benaadams/Ben.Demystifier</projectUrl>
+    <description>High performance understanding for stack traces (Make error logs more productive)</description>
+    <readme>readme.md</readme>
+    <repository type="git" url="https://github.com/benaadams/Ben.Demystifier" commit="ca0293534037c88f29a4d4460de6d9c62f4ee9ad" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="System.Reflection.Metadata" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Extensions" version="4.5.4" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Reflection.Metadata" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks.Extensions" version="4.5.4" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.Reflection.Metadata" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

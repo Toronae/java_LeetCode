@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Autofac.Extras.DynamicProxy</id>
+    <version>6.0.0</version>
+    <authors>Autofac Contributors</authors>
+    <owners>Autofac Contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://autofac.org/</projectUrl>
+    <description>Autofac extension for enabling AOP in conjunction with Castle.</description>
+    <releaseNotes>Release notes are at https://github.com/autofac/Autofac.Extras.DynamicProxy/releases</releaseNotes>
+    <copyright>Copyright © 2013 Autofac Contributors</copyright>
+    <tags>autofac di ioc dependencyinjection dynamicproxy</tags>
+    <repository type="git" url="https://github.com/autofac/Autofac.Extras.DynamicProxy" commit="d14b34a0bec59c4984cd6167bf2f3e37fb6e1002" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Autofac" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Castle.Core" version="4.4.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Autofac" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Castle.Core" version="4.4.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <icon>icon.png</icon>
+  </metadata>
+</package>

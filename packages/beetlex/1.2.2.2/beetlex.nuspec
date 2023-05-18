@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>BeetleX</id>
+    <version>1.2.2.2</version>
+    <authors>henryfan</authors>
+    <owners>henryfan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/IKende/FastHttpApi/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/IKende/BeetleX</projectUrl>
+    <description>dotnet core high performance socket tcp communication components support SSL</description>
+    <copyright>Copyright © ikende.com 2018 email:henryfan@msn.com</copyright>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.1" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>BeetleX.FastHttpApi</id>
+    <version>1.1.5.6</version>
+    <authors>henryfan</authors>
+    <owners>henryfan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/IKende/FastHttpApi/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/IKende/FastHttpApi</projectUrl>
+    <description>dotnet core fast http api server support websocket and ssl</description>
+    <copyright>Copyright © ikende.com 2018 email:henryfan@msn.com</copyright>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="BeetleX" version="1.2.2.2" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

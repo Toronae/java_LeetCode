@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="3.4">
+    <id>System.Security.Cryptography.X509Certificates</id>
+    <version>4.1.0-rc2-24027</version>
+    <title>System.Security.Cryptography.X509Certificates</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>Provides types for reading, exporting and verifying Authenticode X.509 v3 certificates. These certificates are signed with a private key that uniquely and positively identifies the holder of the certificate.
+
+Commonly Used Types:
+System.Security.Cryptography.X509Certificates.X509Certificate2
+System.Security.Cryptography.X509Certificates.X509Certificate
+System.Security.Cryptography.X509Certificates.X509ContentType
+System.Security.Cryptography.X509Certificates.StoreLocation
+System.Security.Cryptography.X509Certificates.StoreName
+System.Security.Cryptography.X509Certificates.X509FindType
+System.Security.Cryptography.X509Certificates.X509ChainStatus
+System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension
+System.Security.Cryptography.X509Certificates.X509Chain
+ \r\n TFS ID: 1599443, GitHub SHA: https://github.com/dotnet/corefx/tree/eede273a4dfabcea608621f5e1bbf8ad00584cfb</description>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+    <dependencies>
+      <group targetFramework="MonoAndroid1.0" />
+      <group targetFramework="MonoTouch1.0" />
+      <group targetFramework=".NETFramework4.6">
+        <dependency id="runtime.native.System" version="4.0.0-rc2-24027" />
+        <dependency id="runtime.native.System.Net.Http" version="4.0.1-rc2-24027" />
+        <dependency id="runtime.native.System.Security.Cryptography" version="4.0.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.1.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0-rc2-24027" />
+      </group>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="runtime.native.System" version="4.0.0-rc2-24027" />
+        <dependency id="runtime.native.System.Net.Http" version="4.0.1-rc2-24027" />
+        <dependency id="runtime.native.System.Security.Cryptography" version="4.0.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.1.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0-rc2-24027" />
+      </group>
+      <group targetFramework=".NETCore5.0">
+        <dependency id="runtime.native.System" version="4.0.0-rc2-24027" />
+        <dependency id="runtime.native.System.Net.Http" version="4.0.1-rc2-24027" />
+        <dependency id="runtime.native.System.Security.Cryptography" version="4.0.0-rc2-24027" />
+        <dependency id="System.Collections" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Globalization" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Globalization.Calendars" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.IO" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.IO.FileSystem" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.Runtime" version="4.1.0-rc2-24027" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Runtime.Handles" version="4.0.1-rc2-24027" />
+        <dependency id="System.Runtime.InteropServices" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Runtime.Numerics" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.1.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Cng" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Primitives" version="4.0.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Text.Encoding" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Threading" version="4.0.11-rc2-24027" exclude="Compile" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="runtime.native.System" version="4.0.0-rc2-24027" />
+        <dependency id="runtime.native.System.Net.Http" version="4.0.1-rc2-24027" />
+        <dependency id="runtime.native.System.Security.Cryptography" version="4.0.0-rc2-24027" />
+        <dependency id="System.Runtime" version="4.1.0-rc2-24027" />
+        <dependency id="System.Runtime.Handles" version="4.0.1-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.1.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0-rc2-24027" />
+      </group>
+      <group targetFramework=".NETStandard1.4">
+        <dependency id="runtime.native.System" version="4.0.0-rc2-24027" />
+        <dependency id="runtime.native.System.Net.Http" version="4.0.1-rc2-24027" />
+        <dependency id="runtime.native.System.Security.Cryptography" version="4.0.0-rc2-24027" />
+        <dependency id="System.Collections" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Globalization" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Globalization.Calendars" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.IO" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.IO.FileSystem" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.IO.FileSystem.Primitives" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.IO.FileSystem.Watcher" version="4.0.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.Runtime" version="4.1.0-rc2-24027" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Runtime.Handles" version="4.0.1-rc2-24027" />
+        <dependency id="System.Runtime.InteropServices" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Runtime.Numerics" version="4.0.1-rc2-24027" exclude="Compile" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.1.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.Cng" version="4.1.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Security.Cryptography.Csp" version="4.0.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0-rc2-24027" />
+        <dependency id="System.Security.Cryptography.OpenSsl" version="4.0.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Security.Cryptography.Primitives" version="4.0.0-rc2-24027" exclude="Compile" />
+        <dependency id="System.Text.Encoding" version="4.0.11-rc2-24027" exclude="Compile" />
+        <dependency id="System.Threading" version="4.0.11-rc2-24027" exclude="Compile" />
+      </group>
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="Xamarin.Mac2.0" />
+      <group targetFramework="Xamarin.TVOS1.0" />
+      <group targetFramework="Xamarin.WatchOS1.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.6" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.6" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.6.1" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

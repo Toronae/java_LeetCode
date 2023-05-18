@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Pomelo.AspNetCore.TimedJob</id>
+    <version>2.0.0-rtm-10046</version>
+    <authors>Pomelo.AspNetCore.TimedJob</authors>
+    <owners>Pomelo.AspNetCore.TimedJob</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/PomeloFoundation/dotNETCore-Extensions/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/PomeloFoundation/dotNETCore-Extensions</projectUrl>
+    <iconUrl>https://avatars2.githubusercontent.com/u/19828814?v=3</iconUrl>
+    <description>Package Description</description>
+    <repository type="git" url="https://github.com/PomeloFoundation/dotNETCore-Extensions" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Hosting" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyModel" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Timer" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

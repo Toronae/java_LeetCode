@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Mono.Options</id>
+    <version>6.12.0.148</version>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://go.microsoft.com/fwlink/?linkid=865025</licenseUrl>
+    <projectUrl>https://go.microsoft.com/fwlink/?linkid=865059</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/xamarin/XamarinComponents/60536db623beeeb7bb5d1e7a78f9c26da32e26b6/XPlat/Mono.Options/component/icons/icon_256x256.png</iconUrl>
+    <description>A Getopt::Long-inspired option parsing library for C#.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>mono, options, command line, terminal</tags>
+    <repository type="git" url="https://go.microsoft.com/fwlink/?linkid=865059" branch="Mono.Options-6.12.0.148" commit="6752fc86abde3312fef2b6f93bf4a61c4f04e572" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.0-Client" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

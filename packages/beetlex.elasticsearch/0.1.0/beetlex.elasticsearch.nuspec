@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>BeetleX.Elasticsearch</id>
+    <version>0.1.0</version>
+    <authors>henryfan</authors>
+    <owners>henryfan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Elasticsearch client for .net std 2.0</description>
+    <copyright>Copyright © ikende.com 2018 email:henryfan@msn.com</copyright>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Newtonsoft.Json" version="12.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
